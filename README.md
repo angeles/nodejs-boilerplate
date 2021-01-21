@@ -86,27 +86,27 @@ La siguiente es la lista de cosas que estaba para seguir:
   1. TODO: Check invalid characters on users - (in progress) -
   1. TODO: Add TESTs
   1. TODO: Add SWAGGER and more comments.
-  ### TODO: Refactor: review nodejs best practices, avoid literals strings and numbers, etc. 
-  ### TODO: Use module "debug" replace the log.console or add a logger.
-  ### TODO: Add Encrypt and decrypt password when store on database - DONE! -
-  ### TODO: Add try/catch to each endpoint on controllers. - DONE! -
-  ### TODO: DATABASE.
-  ### TODO: Add database verification on Health.
-  ###   TODO: primary key is the rowid, shoudl I add explicity?
-  ###   TODO: index on recipient+rowid. 
-  ###   TODO: Add Database check where the data tables dont exists and create them.
-  ###   POV: Sqlite. is not the best option thinkin on scaling, could be elasticsearch, postgres, etc.
-  ###   POV: Database security. While sqlite3 do chmod 700 /path/to/sqlitedb or disk encrypt (Centos7). In another way add user/pwd on database and others.
-  ###   TODO: Add sequelize ORM to dbController - (in progress) -
-  ###      Because the time is a TODO. ORM allows all possible db and not to write sql explicity and more legible code.
-  ###   POV: Add a deamon to have the sqlite3 running.
-  ### Analyze: AUTH0 API.
-  ### TODO: Test token error cases.
-  ### TODO: Test send message with all the types ande error cases.
-  ### Analyze: Should I compare the sender/reciept parameters with the token user?.
-  ### Analyze: is ok to use strict mode?
-  ### Review: dbcloses and serializacion.
-  ### Review: the timestamp are in UTC.
-  ### Review: correct error code numbers: 200	OK / 400 Bad Request / 401 Unauthorized / 500	Internal Server Error
-  ### Review: if there is a missing Try/Catch.
+  1. TODO: Refactor: review nodejs best practices, avoid literals strings and numbers, etc. 
+  1. TODO: Use module "debug" replace the log.console or add a logger.
+  1. TODO: Add Encrypt and decrypt password when store on database - DONE! -
+  1. TODO: Add try/catch to each endpoint on controllers. - DONE! -
+  1. TODO: DATABASE.
+  1. TODO: Add database verification on Health.
+  2.   TODO: primary key is the rowid, shoudl I add explicity?
+  1.   TODO: index on recipient+rowid. 
+  1.   TODO: Add Database check where the data tables dont exists and create them.
+  1.   POV: Sqlite. is not the best option thinkin on scaling, could be elasticsearch, postgres, etc.
+  1.   POV: Database security. While sqlite3 do chmod 700 /path/to/sqlitedb or disk encrypt (Centos7). In another way add user/pwd on database and others.
+  1.   TODO: Add sequelize ORM to dbController - (in progress) -
+        Because the time is a TODO. ORM allows all possible db and not to write sql explicity and more legible code.
+  1.   POV: Add a deamon to have the sqlite3 running.
+  1. Analyze: AUTH0 API.
+  1. TODO: Test token error cases.
+  1. TODO: Test send message with all the types ande error cases.
+  1. Analyze: Should I compare the sender/reciept parameters with the token user?.
+  1. Analyze: is ok to use strict mode?
+  1. Review: dbcloses and serializacion.
+  1. Review: the timestamp are in UTC.
+  1. Review: correct error code numbers: 200	OK / 400 Bad Request / 401 Unauthorized / 500	Internal Server Error
+  1. Review: if there is a missing Try/Catch.
   ### -------------------------------------------------------------------------------------------------------------------------------------------------
