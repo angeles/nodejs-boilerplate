@@ -18,14 +18,16 @@ npm start
 ##### Note
 You can remove/modify this file for documenting your solution.
 
+###############################################################################################
+
 ### Modules added:
-npm install express
-npm install sqlite3
-npm install jsonwebtoken
-npm install jsonschema
+- npm install express
+- npm install sqlite3
+- npm install jsonwebtoken
+- npm install jsonschema
 
 ### Database run:
-sqlite3 test.db 
+- sqlite3 test.db 
 
 ### Database creation:
 DROP TABLE IF EXISTS users;
