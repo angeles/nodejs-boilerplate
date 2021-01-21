@@ -43,11 +43,6 @@ You can remove/modify this file for documenting your solution.
 	type text NOT NULL,
 	content text not null,
 	timestamp text not null);
-  
-  ### notes:
-  - primary key is the rowid- 
-  - primary key need to add explicity?
-  - index on recipient+rowid?
 
 ### -------------------------------------------------------------------------------------------------------------------------------------------------
 ### Comment on challenge delivery:
@@ -93,6 +88,8 @@ La siguiente es la lista de cosas que estaba para seguir:
   ### TODO: Add try/catch to each endpoint on controllers. - DONE! -
   ### TODO: DATABASE.
   ### TODO: Add database verification on Health.
+  ###   TODO: primary key is the rowid, shoudl I add explicity?
+  ###   TODO: index on recipient+rowid. 
   ###   TODO: Add Database check where the data tables dont exists and create them.
   ###   POV: Sqlite. is not the best option thinkin on scaling, could be elasticsearch, postgres, etc.
   ###   POV: Database security. While sqlite3 do chmod 700 /path/to/sqlitedb or disk encrypt (Centos7). In another way add user/pwd on database and others.
