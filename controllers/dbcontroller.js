@@ -1,8 +1,16 @@
 const config = require('../config');
-const user = require('../models/user');
+const dbuser = require('../models/dbuser');
 
-var database = require(config.database.database).verbose();
 //TODO USE the ORM here.
+var database = require(config.database.database).verbose();
+
+
+//TODO: move crypto routines to another controller or utils file.
+const crypto  = require('crypto');
+const algorithm = 'aes-256-cbc'; 
+const key = "estoesunapruenadestoesunapruenad"; 
+const iv = "estoesunapruenad" ; 
+
 
 module.exports.adduser = async (usr, pwd, success, error) => {
   igetuser(usr,
@@ -47,7 +55,7 @@ module.exports.isuserid = async (usrid, success, error) => {
 
 function igetuser (usr, success, error) {
   var db = new database.Database(config.database.base);
-  db.all("select rowid,user,password from USERS where user = '"+usr+"'", function (err, row){ 
+  db.all("select rowid,user,password from users where user = ?;",[usr], function (err, row){ 
     db.close();
     if(err){
       console.log("igetuser err: "+err);
@@ -55,23 +63,24 @@ function igetuser (usr, success, error) {
       return;
     }
     if(row.length>0) {
-      user.id =row[0].rowid;
-      user.password = row[0].password;
-      user.user = row[0].user;
-      success(user);
+      dbuser.id =row[0].rowid;
+      dbuser.password = decrypt(row[0].password);
+      dbuser.user = row[0].user;
+      success(dbuser);
     }
     else {
-      user.id =0;
-      user.password = '';
-      user.user = usr;
-      success(user);
+      dbuser.id =0;
+      dbuser.password = '';
+      dbuser.user = usr;
+      success(dbuser);
     }
   });    
 }
 
 function insertuser (usr, pwd, success, error) {
+  let cryptedpwd = encrypt(pwd);
   var db = new database.Database(config.database.base);
-  db.run('insert into USERS(user, password) values(?, ?)', [usr,pwd], function(err) {
+  db.run('insert into users(user, password) values(?, ?)', [usr,cryptedpwd], function(err) {
       if(null == err){ // row inserted ok
         db.close();
         success(this.lastID);
@@ -82,19 +91,13 @@ function insertuser (usr, pwd, success, error) {
   }); 
 }
 
-module.exports.getmessages = (recipient, start, limit, succes, error) =>{
+module.exports.getmessages = (recipient, start, limit, success) =>{
   var db = new database.Database(config.database.base);  
-  //+recipient+ " and rowid >= "+ start +" limit "+limit
-  var rows = [];
-  succes(rows);
-  /*db.all("select rowid as id,timestamp, sender, recipient, content from messages where recipient = 2", function(err,rows){
-    db.close();  
-    if(err == null )
-        error(err);      
-    if(rows == undefined )
-      error("invalid results");      
-    succes(rows);
-  });*/
+  let query = "select rowid as id,timestamp, sender, recipient, content from messages where recipient = "+recipient +"  and rowid >= "+ start +" limit "+limit+ ";";
+  db.all(query, function(err,rows){
+    db.close();     
+    success(err,rows);
+  });
 }
 
   
@@ -115,3 +118,16 @@ module.exports.insertmessage = (sender, recipient, content, success, error) => {
   }
 };
 
+function encrypt(text) { 
+  let cipher = crypto.createCipheriv( algorithm, Buffer.from(key), iv); 
+  let encrypted = cipher.update(text);    
+  encrypted = Buffer.concat([encrypted, cipher.final()]); 
+  return encrypted.toString('hex'); 
+ } 
+
+ function decrypt(text){
+   var decipher = crypto.createDecipheriv( algorithm, Buffer.from(key), iv); 
+   var dec = decipher.update(text, 'hex', 'utf8');
+   dec += decipher.final('utf8');
+   return dec;
+ }

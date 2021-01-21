@@ -1,5 +1,4 @@
 module.exports = { 
-    user:'',
-    password:'',
+    id:0,
     token:''
 };

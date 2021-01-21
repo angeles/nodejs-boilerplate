@@ -1,31 +1,24 @@
+const user = require('../models/user');
 const dbcontroller = require('./dbcontroller');
+const utils = require('..//utils/utils');
 
 /**
  * Creates a user.
  */
 module.exports.createUser = async (req, res) => {
-    //TODO add password encryption
-  console.log("createUser");
-  dbcontroller.adduser(req.body.user, req.body.password, (data) => { 
-      res.status(200).json({"id":data});
-    }, (err) => {
-      res.status(500).json({"error":err});
-   });  
+  console.log("create or retrieve user "+req.body.user);
+  try {    
+      if( !req.body.user || req.body.user == '' || !req.body.password || req.body.password == '') //TODO check invalid characters!!
+        res.status(400).json({message:"invalid parameters"});     
+
+      dbcontroller.adduser(req.body.user, req.body.password, (data) => { 
+        user.id = data;
+          res.status(200).json(user);
+        }, (err) => {
+          res.status(500).json({"error":err});
+       });         
+    } catch (error) {
+      res.status(500).json({"error creating user ":error});      
+    }
  };
 
-
-/*
-function encrypt(text) {
-  var cipher = crypto.createCipheriv(algorithm, password)
-  var crypted = cipher.update(text, 'utf8', 'hex')
-  crypted += cipher.final('hex');
-  return crypted;
-}
-
-function decrypt(text) {
-  var decipher = crypto.createDecipheriv(algorithm, password)
-  var dec = decipher.update(text, 'hex', 'utf8')
-  dec += decipher.final('utf8');
-  return dec;
-}
-*/
