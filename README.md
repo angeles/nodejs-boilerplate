@@ -92,8 +92,8 @@ La siguiente es la lista de cosas que estaba para seguir:
   1. TODO: Add try/catch to each endpoint on controllers. - DONE! -
   1. TODO: DATABASE.
   1. TODO: Add database verification on Health.
-  2.   TODO: primary key is the rowid, shoudl I add explicity?
-  1.   TODO: index on recipient+rowid. 
+  1.1.   TODO: primary key is the rowid, shoudl I add explicity?
+  1.1   TODO: index on recipient+rowid. 
   1.   TODO: Add Database check where the data tables dont exists and create them.
   1.   POV: Sqlite. is not the best option thinkin on scaling, could be elasticsearch, postgres, etc.
   1.   POV: Database security. While sqlite3 do chmod 700 /path/to/sqlitedb or disk encrypt (Centos7). In another way add user/pwd on database and others.
