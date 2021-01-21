@@ -30,14 +30,14 @@ You can remove/modify this file for documenting your solution.
 - sqlite3 test.db 
 
 ### Database creation:
-DROP TABLE IF EXISTS users;
-CREATE TABLE IF NOT EXISTS users (
+- DROP TABLE IF EXISTS users;
+- CREATE TABLE IF NOT EXISTS users (
 	user text NOT NULL,
 	password text NOT NULL
 );
 
-DROP TABLE IF EXISTS messages;
-CREATE TABLE IF NOT EXISTS messages (
+- DROP TABLE IF EXISTS messages;
+- CREATE TABLE IF NOT EXISTS messages (
 	sender integer NOT NULL,
   recipient integer NOT NULL,
 	type text NOT NULL,
