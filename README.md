@@ -90,16 +90,15 @@ La siguiente es la lista de cosas que estaba para seguir:
   1. TODO: Use module "debug" replace the log.console or add a logger.
   1. TODO: Add Encrypt and decrypt password when store on database - DONE! -
   1. TODO: Add try/catch to each endpoint on controllers. - DONE! -
-  1. TODO: DATABASE.
-  1.1 TODO: Add database verification on Health.
-  1.2.   TODO: primary key is the rowid, shoudl I add explicity?
-  1.1   TODO: index on recipient+rowid. 
-  1.   TODO: Add Database check where the data tables dont exists and create them.
-  1.   POV: Sqlite. is not the best option thinkin on scaling, could be elasticsearch, postgres, etc.
-  1.   POV: Database security. While sqlite3 do chmod 700 /path/to/sqlitedb or disk encrypt (Centos7). In another way add user/pwd on database and others.
-  1.   TODO: Add sequelize ORM to dbController - (in progress) -
+  1. TODO: DATABASE. Add database verification on Health.
+  1. TODO: DATABASE.  primary key is the rowid, shoudl I add explicity?
+  1. TODO: DATABASE. index on recipient+rowid. 
+  1. TODO: DATABASE. Add Database check where the data tables dont exists and create them.
+  1. POV: DATABASE. Sqlite. is not the best option thinkin on scaling, could be elasticsearch, postgres, etc.
+  1. POV: DATABASE. Database security. While sqlite3 do chmod 700 /path/to/sqlitedb or disk encrypt (Centos7). In another way add user/pwd on database and others.
+  1. TODO: DATABASE. Add sequelize ORM to dbController - (in progress) -
         Because the time is a TODO. ORM allows all possible db and not to write sql explicity and more legible code.
-  1.   POV: Add a deamon to have the sqlite3 running.
+  1. POV: DATABASE. Add a deamon to have the sqlite3 running.
   1. Analyze: AUTH0 API.
   1. TODO: Test token error cases.
   1. TODO: Test send message with all the types ande error cases.
