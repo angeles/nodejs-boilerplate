@@ -56,6 +56,7 @@ You can remove/modify this file for documenting your solution.
 desde postman como se ve en ./postmanImage.png. El configurar del entorno, hacer pruebas primero con java, etc. fue parte del arranque junto con entender el requerimiento.
 - Elegí nodejs pensando en que como suelo usar typescript en mi trabajo actual podía facilitarme el camino. También elegí nodjs por el tipo de desafio 
 la posibilidad de escalabilidad (url), por velocidad (manejo de eventoloop, io, http, etc),  
+- Contenedores: como comentamos por mail previamente no usare ni dockerfiles ni kuernates ("podes enfocarte en la API directamente").
 - Me gustaria haber hecho tests que no se bien en nodejs que modulo uasar seria para invesitgar y refactorizar la app.
 - Leyendo y buscando encontre que usar express y passport para la autenticacion coincidida con los requerimientos. En un principio analize unsar Auth0 que es lo que
 uso en mi trabajo actual. De ser que la app de chat es comun a otras quizas se puede tener una api de autorizacion corriendo con auth0 o con lo que sea y desde la de
