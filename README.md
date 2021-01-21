@@ -48,7 +48,7 @@ You can remove/modify this file for documenting your solution.
 	content text not null,
 	timestamp text not null);
 
-### -------------------------------------------------------------------------------------------------------------------------------------------------
+### -----------------------------------------------------------------
 ### Comment on challenge delivery:
 - Este challenge resulta para mi un desafio por varios motivos, mas allá de tiempo entre familia y trabajo, hace muchos años que estoy trabajando en otros
  lenguajes no en los sugeridos. Esto me entusiasmó mucho al al ir aprendiendo cosas nuevas rapidamente.
@@ -82,10 +82,10 @@ Seria una investigacion y refactorizacion.
 
 La siguiente es la lista de cosas que estaba para seguir:
 ### TODOs, POV and REFACTORs ANGELES's list:
-  ### TODO: Validate Message Schema  - (in progress) -
-  ### TODO: Check invalid characters on users - (in progress) -
-  ### TODO: Add TESTs
-  ### TODO: Add SWAGGER and more comments.
+  1. TODO: Validate Message Schema  - (in progress) -
+  1. TODO: Check invalid characters on users - (in progress) -
+  1. TODO: Add TESTs
+  1. TODO: Add SWAGGER and more comments.
   ### TODO: Refactor: review nodejs best practices, avoid literals strings and numbers, etc. 
   ### TODO: Use module "debug" replace the log.console or add a logger.
   ### TODO: Add Encrypt and decrypt password when store on database - DONE! -
