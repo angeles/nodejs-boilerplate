@@ -1,0 +1,126 @@
+ {
+      "Message": {
+        "required": [
+          "id",
+          "timestamp",
+          "sender",
+          "recipient",
+          "content"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Message IDs are required to be unique and increase over time; they\nmay or may not be sequential.\n"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "UTC Timestamp at which server received this message.\n"
+          },
+          "sender": {
+            "type": "integer",
+            "format": "int64",
+            "description": "User ID of message sender.\n"
+          },
+          "recipient": {
+            "type": "integer",
+            "format": "int64",
+            "description": "User ID of message recipient.\n"
+          },
+          "content": {
+            "$ref": "#/components/schemas/Content"
+          }
+        }
+      },
+      "Content": {
+        "description": "Message content (one of three possible types).\n",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "text": "#/components/schemas/Text",
+            "image": "#/components/schemas/Image",
+            "video": "#/components/schemas/Video"
+          }
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/Text"
+          },
+          {
+            "$ref": "#/components/schemas/Image"
+          },
+          {
+            "$ref": "#/components/schemas/Video"
+          }
+        ]
+      },
+      "Text": {
+        "required": [
+          "type",
+          "text"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      "Image": {
+        "required": [
+          "type",
+          "url",
+          "height",
+          "width"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "height": {
+            "type": "integer"
+          },
+          "width": {
+            "type": "integer"
+          }
+        }
+      },
+      "Video": {
+        "required": [
+          "type",
+          "url",
+          "source"
+        ],
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "youtube",
+              "vimeo"
+            ]
+          }
+        }
+      }
+    }
