@@ -1,63 +1,15 @@
 openapi: "3.0.0"
 info:
-  title: ASAPP Java Chat Challenge Project
+  title: Nodejs Chat Challenge Project
   version: v1
   description: |
-    Download skeleton code:
-
-    <p><a class="sc-tilXH jIdpVJ" href="java-boilerplate.zip">Java</a></p>
-    <p><a class="sc-tilXH jIdpVJ" href="go-boilerplate.zip">Go</a></p>
-    <p><a class="sc-tilXH jIdpVJ" href="nodejs-boilerplate.zip">Nodejs</a></p>
-
-    Welcome! This page describes a bare-bones REST API for a chat backend.
-    Your task is to implement this API using a the java skeleton code provided above.
-
-    ## Requirements
-
-    Your solution should implement basic security and persistence using a
-    relational database.
-
-    We very much value code quality and technical design. Think about the
-    structure of your data models and the readability of your code.
-
-    Also, for persistence, we strongly recommend the use of <a class="sc-gPEVay bjQuAn" href="https://www.sqlite.org/index.html">SQLite 3</a>.
-    Otherwise, you will need to justify in all aspects the use of other way of persistence.
-
-    ## Follow-up discussion
-
-    We’ll discuss this as part of the project review. Don't worry if you don't
-    have all the answers off the top of your head. We’re very much looking for
-    your ability to reason about and work through these kinds of questions.
-
-    How well does your project scale? What if the number of users grow to 1000?
-    To 1000000? (And the conversation history grows too.)
-
-    What if you had users around the globe? How do you keep the application
-    responsive? (Latency becomes problematic if you’re still running in just
-    one region. But if you have servers in Japan and servers in the US, how do
-    they coordinate?)
-
-    Given the time available, you may not be able to implement every feature,
-    write tests, handle errors, or refactor the code to your satisfaction.
-    That's okay -- those things are great topics for discussion as well.
-
-    ## Skeleton code
-
-    Here are some brief notes on getting up and running with the [skeleton code].
     
-    After following the instructions (in README.md) from the downloaded skeleton code of how running the server, you
-    can check if everything is working by running
+    you can check if everything is working by running
     ```
     curl -s -d '' -XPOST http://localhost:8080/check
     ```
     which should return `{"health": "ok"}`.
-
-    Once in the code your will notice that all endpoints, explained deeply below, are already implemented within the controller
-    package and their respected `paths` or `routes` are defined in the `Application.java`. Deeply in each controller you will find `//TODO` comments
-    where you will need to complete with the expected functionality.
-
-    Feel free to add packages, frameworks, java files and the resources you think necessary to implement this challenge; and, if there are any doubts or
-    concerns, please don't be afraid of asking!
+    
 servers:
   - url: http://localhost:8080
 paths:
