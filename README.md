@@ -1,9 +1,7 @@
-# ASAPP Chat Backend Challenge v1
+# Chat Backend Challenge v1
 ### Overview
-This is a Nodejs based boilerplate which runs an HTTP Server configured to answer the endpoints defined in 
-[the challenge you received](https://backend-challenge.asapp.engineering/).
+This is a Nodejs based boilerplate which runs an HTTP Server configured to answer the endpoints defined.
 All endpoints are configured in `index.js` and if you go deeper to the controllers
-for each route, you will find a *TODO* comments where you are free to implement your solution.
 
 ### Prerequisites
 
@@ -15,14 +13,7 @@ Installed Nodejs >= v8.x
 npm start
 ```
 
-##### Note
-You can remove/modify this file for documenting your solution.
-
-
-
-
-###############################################################################################
-### Angeles Grieco Documentation:
+### Documentation:
 
 ### Modules added:
 - npm install express
@@ -50,34 +41,10 @@ You can remove/modify this file for documenting your solution.
 
 ### -----------------------------------------------------------------
 ### Comment on challenge delivery:
-- Este challenge resulta para mi un desafio por varios motivos, mas allá de tiempo entre familia y trabajo, hace muchos años que estoy trabajando en otros
- lenguajes no en los sugeridos. Esto me entusiasmó mucho al al ir aprendiendo cosas nuevas rapidamente.
-- El desarollo lo hice desde visual code visualizando alli mismo el node y el sqlite3 como se ve en la imagen ./entornoDesarrollo.png y probando la api 
-desde postman como se ve en ./postmanImage.png. El configurar del entorno, hacer pruebas primero con java, etc. fue parte del arranque junto con entender el requerimiento.
-- Elegí nodejs pensando en que como suelo usar typescript en mi trabajo actual podía facilitarme el camino. También elegí nodjs por el tipo de desafio 
-la posibilidad de escalabilidad (url), por velocidad (manejo de eventoloop, io, http, etc),  
-- Contenedores: como comentamos por mail previamente no usare ni dockerfiles ni kuernates ("podes enfocarte en la API directamente").
-- Me gustaria haber hecho tests que no se bien en nodejs que modulo uasar seria para invesitgar y refactorizar la app.
-- Leyendo y buscando encontre que usar express y passport para la autenticacion coincidida con los requerimientos. En un principio analize unsar Auth0 que es lo que
-uso en mi trabajo actual. De ser que la app de chat es comun a otras quizas se puede tener una api de autorizacion corriendo con auth0 o con lo que sea y desde la de
-chat llamar a esa.
-- Para el modelado de los datos y acceso a la base queria usar ORM queria hacerlo hoy pero no llegue a implementarlo (sequelize https://sequelize.org/).
-Desde ya seria uno de los pasos siguientes y necesarios para que el codigo sea agnostico de la base, no tener queries literales y seam mejor para compartir.
-- Me esta faltando hacer mas pruehas de errores de todas las partes.
-- Me gustaria manejar un error handler pero no llegue a revisar como usarlo y alli revisaria tambien si estan correctos los error codes.
-- Algo importante sobretodo en el guardado de mensajes es validar el esquema, lo estoy escribiendo y aun no esta completo lo comento por ahora.
+- IDE visual code. Tets api postman
+- nodejs simple y la posibilidad de escalabilidad (url), por velocidad (manejo de eventoloop, io, http, etc),  
+- Contenedores: no usare ni dockerfiles ni kuernates.
 - Sqlite me parece una base sencilla para un desafio asi pero no para un problema real que quiere escalar.
-- Decidi dejar para despues el revisar la utilizacion de los models, basicamente por desconocimiento del uso del lenguaje para este caso. Lo dejo asi por ahora. 
-Seria una investigacion y refactorizacion.
-- Decidi dejar para despues cosas sencillas como agregar el encrypt de las password al guardarla en la base, chequeos de existencia de las tablas y desmas, revisar si las fechas estan en utc, 
-- Calidad del codigo: entre las cosas q me faltaron fue agregar tr/catchs para evitare errores:
-    try {
-        var jsonrequest = JSON.parse(req.query.params); //o req.body
-        //....
-      } catch (e) {
-        res.status(400).send('Invalid JSON string');
-      }
-  y validacion de esquema en especial al salvar los messages.
 - El guardado del content de los mensajes lo hago en texto en la base en formato json.
 - Automatizar / mockear o lo que sea para testear los endpoints.
 
