@@ -28,5 +28,5 @@ app.get('/messages', msgController.get);
 
 const port = config.web.port;
 app.listen(port, () => {
-  console.log(`ASAPP Challenge app running on port ${port}`);
+  console.log(`Chat Challenge app running on port ${port}`);
 });
